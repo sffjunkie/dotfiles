@@ -1,0 +1,86 @@
+#
+# wm independent hotkeys
+#
+
+# make sxhkd reload its configuration files:
+super + alt + Escape
+  pkill -USR1 -x sxhkd
+
+
+# terminal emulator
+super + {Return,t}
+  $TERMINAL
+
+# program launcher
+super + alt + @space
+  rofi -modi drun -show drun
+
+#region Apps
+# applications
+super + f
+  $TERMINAL -e $HOME/.local/bin/fm 
+
+super + m
+  $TERMINAL -e $HOME/.local/bin/music
+
+super + v
+  $TERMINAL -e $HOME/.local/bin/music -s visualizer
+
+super + b
+  $HOME/.local/bin/browser
+
+super + c
+  /usr/bin/code
+
+super + h
+  $TERMINAL -e htop
+
+super + alt + Pause
+  mpc toggle
+
+super + F12
+  $HOME/.config/rofi/scripts/systemmenu.sh
+
+# endregion
+
+# region Multimedia
+
+XF86AudioPause
+  mpc toggle
+
+super + alt + Prior
+  mpc prev
+
+XF86AudioPrev
+  mpc prev
+
+super + alt + Next
+  mpc next
+
+XF86AudioNext
+  mpc next
+
+super + alt + Scroll_Lock
+  $HOME/.local/bin/vol toggle
+
+XF86AudioMute
+  $HOME/.local/bin/vol toggle
+
+super + alt + Home
+  $HOME/.local/bin/vol up
+
+XF86AudioRaiseVolume
+  $HOME/.local/bin/vol up
+
+super + alt + End
+  $HOME/.local/bin/vol down
+
+XF86AudioLowerVolume
+  $HOME/.local/bin/vol down
+
+XF86AudioPlay
+  mpc XF86AudioPlay
+
+XF86AudioStop
+  mpc stop
+# endregion
